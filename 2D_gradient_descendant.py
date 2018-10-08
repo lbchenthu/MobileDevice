@@ -7,9 +7,15 @@ def linear_regression(X,y,m_current = 0, b_current = 0, epochs = 1000, learning_
   N = float(len(y))
   for i in range(epochs):
     y_current = (m_current * X) + b_current
+    
+    #calculate cost
     cost = sum([data**2 for data in (y - y_current)]) / N
+    
+    #calculate gradient
     m_gradient = -(2/N)*sum(X*(y-y_current))
     b_gradient = -(2/N)*sum(y-y_current)
+    
+    #update m,b
     m_current = m_current - (learning_rate * m_gradient)
     b_current = b_current - (learning_rate * b_gradient)
     
