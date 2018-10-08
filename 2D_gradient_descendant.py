@@ -15,8 +15,10 @@ def linear_regression(X,y,m_current = 0, b_current = 0, epochs = 1000, learning_
     
     #visualization
     if(i%50 == 0):
-      plt.scatter(X, y_current)
+      plt.scatter(X, y)
+      plt.plot(X, y_current)
       plt.show()
+      print("cost=",cost)
   return m_current, b_current, cost
 
 #Generate X,Y dataset
